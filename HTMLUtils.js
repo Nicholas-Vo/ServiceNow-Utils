@@ -1,3 +1,9 @@
+/*
+Parsing HTML via regex is not a best practice, however these functions work in many use cases.
+
+Another option is GlideSPScriptable().stripHTML()
+*/
+
 function decodeHTML(str) {
     var a = str.replace(/<\/?[^>]+(>|$)/g, ""); //Remove tags
     var b = a.replace(/&amp;/g, '&'); //Retain any ampersands that are just ampersands
