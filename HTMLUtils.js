@@ -5,10 +5,10 @@ Another option is GlideSPScriptable().stripHTML()
 */
 
 function decodeHTML(str) {
-    var a = str.replace(/<\/?[^>]+(>|$)/g, ""); //Remove tags
-    var b = a.replace(/&amp;/g, '&'); //Retain any ampersands that are just ampersands
+    var a = str.replace(/<\/?[^>]+(>|$)/g, "");
+    var b = a.replace(/&amp;/g, '&'); // Retain any ampersands that are just ampersands
     return b.replace(/&#(\d+);/g, function(match, dec) {
-        return String.fromCharCode(dec); //Returns the special character from the decimal code representation and returns the entire decoded string.
+        return String.fromCharCode(dec); // Return the special character from the decimal code representation and return the entire decoded string.
     });
 }
 
