@@ -1,4 +1,3 @@
-
 /* Purge records from a table */
 var theTable = "tablename";
 var limit = 1000; // Set a limit - possible performance impact?
