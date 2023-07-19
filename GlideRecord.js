@@ -13,3 +13,19 @@ while (gr.next()) {
 }
 
 gs.info(array.join(' - '));
+
+/* GlideQuery is another option. It's a wrapper of GlideRecord, GlideRecordSecure, or GlideAggregate depending on 
+functions used. Due to this it is not as performant. GlideQuery is more about readability, best practices and consistency.*/
+new GlideQuery('change_request')
+    .select()
+    .forEach(function (foo) {
+        gs.info(foo.sys_id);
+    });
+
+// It's more reminiscent of SQL.
+new GlideQuery('task')
+    .where('priority', 'IN', [1,2])
+    .select('short_description', 'opened_at')
+    .forEach(function (task) {
+        gs.info('Task "' + task.short_description + '" was opened at ' + task.opened_at);
+    });
