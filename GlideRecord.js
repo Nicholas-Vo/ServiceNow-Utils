@@ -14,8 +14,20 @@ while (gr.next()) {
 
 gs.info(array.join(' - '));
 
+/* The get() method is a shorthand for a single-condition query. */
+var gr = new GlideRecord('incident');
+
+//gr.addQuery('sys_id', 'cb02fffc2fd831107ef4c786f699b667');
+//gr.query();
+//gr.next();
+
+// This is the same as the above three lines.
+gr.get('cb02fffc2fd831107ef4c786f699b667');
+
+gs.info('Incident number is ' + gr.getValue('number'));
+
 /* GlideQuery is another option. It's a wrapper of GlideRecord, GlideRecordSecure, or GlideAggregate depending on 
-functions used. Due to this it is not as performant. GlideQuery is more about readability, best practices and consistency.*/
+methods used. Due to this it is not as performant. GlideQuery is more about readability, best practices and consistency.*/
 new GlideQuery('change_request')
     .select()
     .forEach(function (foo) {
