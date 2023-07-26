@@ -26,6 +26,18 @@ gr.get('cb02fffc2fd831107ef4c786f699b667');
 
 gs.info('Incident number is ' + gr.getValue('number'));
 
+// get() should not be used client side as it cannot be called asynchronously.
+// Instead, query() and setLimit(1) should be used. Client side GlideRecord objects
+// support callback functions as seen below with this anonymous function within query():
+var gr = new GlideRecord('incident');
+gr.addQuery('sys_id', 'cb02fffc2fd831107ef4c786f699b667');
+gr.setLimit(1);
+gr.query(function(grInc) {
+    if (grInc.next()) {
+        // do something here
+    }
+});
+
 /* GlideQuery is another option. It's a wrapper of GlideRecord, GlideRecordSecure, or GlideAggregate depending on 
 methods used. Due to this it is not as performant. GlideQuery is more about readability, best practices and consistency.*/
 new GlideQuery('change_request')
