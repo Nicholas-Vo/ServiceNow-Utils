@@ -8,8 +8,6 @@ By enclosing your script in a self-executing function you can ensure that the sc
 */
 
 (function functionName() {
-
   g_form.addInfoMessage('Hello World!');
-
 })(); /* parenthesis indicate that this function should run */
 
