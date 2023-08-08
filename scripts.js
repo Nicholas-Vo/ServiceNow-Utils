@@ -1,3 +1,10 @@
+/*
+  ServiceNow utility scripts
+  Author: Nick Voss
+  Date: July 3, 2023
+  Description: Useful code snippets.
+*/
+
 /* Purge records from a table */
 var theTable = "tablename";
 var limit = 1000; // Set a limit - possible performance impact?
