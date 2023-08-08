@@ -1,3 +1,10 @@
+/*
+  ServiceNow GlideRecord and GlideQuery examples
+  Author: Nick Voss
+  Date: July 25th, 2023
+  Description: This script demonstrates the usage of GlideRecord and GlideQuery.
+*/
+
 /* Query the CSM case table using an encoded query (SN Utils allows you to grab these easily from lists). */
 var gr = new GlideRecord('sn_customerservice_case');
 
