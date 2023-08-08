@@ -10,6 +10,7 @@ impact other areas of the product, such as by overwriting global variables.
 Selct-executing functions, or IIFEs (Immediately Invoked Function Expressions) are best practice in
 ServiceNow as individual business rules, UI Actions, etc. are actually within the same scope as other
 business rules or UI Actions. This can result in inadvertant behavior should functions have the same name!
+These should NOT be used within, for example, onChange client scripts.
 */
 
 (function functionName() {
