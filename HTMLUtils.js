@@ -1,7 +1,9 @@
 /*
-Parsing HTML via regex is not a best practice, however these functions work in many use cases.
-
-Another option is GlideSPScriptable().stripHTML()
+  ServiceNow HTML utility functions
+  Author: Nick Voss
+  Date: July 5, 2023
+  Description: Demonstrates some options for parsing HTML. Note that arsing HTML via regex is not a best practice, 
+  however these functions work in many use cases. Another option is GlideSPScriptable().stripHTML()
 */
 
 function decodeHTML(str) {
