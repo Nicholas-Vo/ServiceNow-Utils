@@ -14,7 +14,7 @@ The BR creates a new user in order to mimic a real-world scenario where a user i
     }
 
     user_gr.initialize();
-	user_gr.setWorkflow(false); // Prevent BRs from running (prevents info message in portal)
+    user_gr.setWorkflow(false); // Prevent BRs from running (prevents info message in portal)
 
     var catalog_variables = current.variables;
 
