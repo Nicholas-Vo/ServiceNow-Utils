@@ -27,7 +27,7 @@ NickIncidentUtil.createIncident = function(short_desc, caller, category, assignm
         incident_gr.setValue('urgency', urgency);
     }
 
-	incident_gr.setValue('contact_type', 'automation');
+    incident_gr.setValue('contact_type', 'automation');
 
     // Returns the sys_id of the record if successful, or null if fail
     return incident_gr.update();
