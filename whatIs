@@ -1,0 +1,30 @@
+var NickUtil = Class.create();
+NickUtil.prototype = {
+    initialize: function() {},
+
+    type: 'NickUtil'
+};
+
+NickUtil.whatIs = function(aThing) {
+    if (JSUtil.isJavaObject(aThing)) {
+        return '[object JavaObject]: ' + aThing;
+    }
+
+    // store the type
+    var type = typeof aThing;
+
+    // if it's an object, return what *kind* of object (ex. GlideElement)
+    if (type === 'object') {
+        return Object.prototype.toString.call(aThing);
+    } else {
+        // if it's not an object, just return the type (string, number, or whatever)
+        return type;
+    }
+};
+
+// Example usage
+
+gs.info('What is 1234: ' + whatIs(1234)); // prints number
+gs.info('What is user_gr: ' + whatIs(new GlideRecord('sys_user'))); // prints [object GlideRecord]
+gs.info('What is gs.getUser(): ' + whatIs(gs.getUser())); // prints [object JavaObject]: com.glide.sys.User@62b4e813
+
